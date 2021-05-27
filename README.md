@@ -1,4 +1,4 @@
 My dotfiles.
 
-Use `$ stow -t ~ *` to install
+Use `$ stow -t ~ */` to install
 
