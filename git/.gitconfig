@@ -1,0 +1,7 @@
+[user]
+	name = Hayden Johnson
+	email = hajohn100@gmail.com
+[core]
+	editor = /usr/bin/vim
+[init]
+	defaultBranch = main
