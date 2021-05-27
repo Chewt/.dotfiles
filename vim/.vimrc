@@ -26,6 +26,7 @@ highlight ColorColumn ctermbg=lightgray
 set so=5
 set cc=81
 setl tw=80
+set nofoldenable
 
 " Set omnicomplete options
 set omnifunc=syntaxcomplete#Complete
@@ -40,10 +41,11 @@ augroup Vimrc
 augroup END
 
 " Colorscheme
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
 set bg=dark
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italic=0
 set termguicolors
+colorscheme gruvbox
 
 " Spell Highlighting
 hi SpellBad cterm=underline ctermfg=red
