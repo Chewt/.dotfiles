@@ -19,7 +19,7 @@ font pango:monospace 6
 for_window [class="^.*"] border pixel 0
 
 # Start Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -49,7 +49,7 @@ exec --no-startup-id picom -b --backend xrender
 exec pasystray &
 
 # Start playerctl daemon
-exec --no-startup-id playerctl daemon
+exec--no-startup-id playerctld daemon
 
 # Wallpaper
 exec_always $HOME/.fehbg
