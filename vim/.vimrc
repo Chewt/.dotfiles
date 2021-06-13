@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
+Plug 'sheerun/vim-polyglot'
 Plug 'philj56/vim-asm-indent'
 
 call plug#end()
@@ -104,6 +105,10 @@ autocmd FileType c,cpp  nnoremap <Leader>c :read
             \ ~/.vim/templates/c/f_header.c<CR>jA
 autocmd FileType c,cpp  nnoremap <Leader>r :silent !ctags -R --languages=C,C++
             \ <CR>:redraw!<CR>
+
+" Makefile
+autocmd FileType make inoremap ;n <ESC>/(<>)<CR>cf)
+autocmd FileType make nmap ;make :-1read ~/.vim/templates/Makefile<CR>ggi;n
 
 " HTML
 autocmd FileType html setlocal spell spelllang=en_us
