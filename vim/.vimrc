@@ -70,6 +70,7 @@ nnoremap <Leader>l :cn<CR>
 nnoremap <Leader>h :cp<CR>
 nnoremap <Leader>o :copen<CR>
 nnoremap <Leader>g :Termdebug<CR>
+inoremap <c-s> <Del>
 
 "" Netrw options
 let g:netrw_banner=0
