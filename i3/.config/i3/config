@@ -21,6 +21,9 @@ for_window [class="^.*"] border pixel 0
 # Start Polybar
 exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
 
+# Apply wal theme
+exec wal -R
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -76,7 +79,7 @@ bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id $HOME/.dmen.sh
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
