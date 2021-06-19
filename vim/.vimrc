@@ -47,6 +47,7 @@ let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italic=0
 set termguicolors
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 " Spell Highlighting
 hi SpellBad cterm=underline ctermfg=red
