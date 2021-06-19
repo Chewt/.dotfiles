@@ -49,6 +49,7 @@ augroup END
 "set termguicolors
 "colorscheme gruvbox
 colorscheme wal
+hi Normal guibg=NONE ctermbg=NONE
 
 " Spell Highlighting
 hi SpellBad cterm=underline ctermfg=red

@@ -17,15 +17,12 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color8:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 
 [bar/main]
 monitor = eDP1
@@ -58,7 +55,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = spotify
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan temperature battery date powermenu
+modules-right = pulseaudio wlan temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -83,6 +80,7 @@ inherit = bar/main
 monitor = HDMI-0
 tray-position = right
 tray-padding = 2
+modules-right = date
 
 [module/xwindow]
 type = internal/xwindow
@@ -146,7 +144,7 @@ index-sort = true
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -311,7 +309,7 @@ type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
@@ -393,27 +391,19 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = "Menu"
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
+menu-0-0-exec = sudo reboot
 menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-0-1-exec = sudo poweroff
+menu-0-2 = logout
+menu-0-2-exec = i3-msg exit
 
 [module/spotify]
 type = custom/script
