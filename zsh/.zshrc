@@ -21,6 +21,11 @@ compinit
 # End of lines added by compinstall
 source ~/Gits/powerlevel10k/powerlevel10k.zsh-theme
 
+#import wal colors
+. "${HOME}/.cache/wal/colors.sh"
+
+(cat ~/.cache/wal/sequences &)
+
 # aliases
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
@@ -32,6 +37,9 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias lichess='brave --app=https://lichess.org'
+alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
+alias less='less -R'
+
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

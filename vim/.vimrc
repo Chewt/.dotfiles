@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
 Plug 'sheerun/vim-polyglot'
 Plug 'philj56/vim-asm-indent'
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
@@ -42,11 +43,12 @@ augroup Vimrc
 augroup END
 
 " Colorscheme
-set bg=dark
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italic=0
-set termguicolors
-colorscheme gruvbox
+"set bg=dark
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_italic=0
+"set termguicolors
+"colorscheme gruvbox
+colorscheme wal
 hi Normal guibg=NONE ctermbg=NONE
 
 " Spell Highlighting
