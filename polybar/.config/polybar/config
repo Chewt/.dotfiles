@@ -55,7 +55,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = spotify
-modules-right = pulseaudio wlan temperature date powermenu
+modules-right = xbacklight pulseaudio wlan temperature battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -225,7 +225,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp0s20f0u6
+interface = wlp0s20f3
 interval = 3.0
 
 format-connected = <label-connected>
