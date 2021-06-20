@@ -40,6 +40,14 @@ alias lichess='brave --app=https://lichess.org'
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 alias less='less -R'
 
+function themeset ()
+{
+    wal -q -n -i $1
+    feh --bg-scale $1
+    spicetify -q update
+    i3-msg -q restart
+    wal --preview
+}
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
