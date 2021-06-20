@@ -46,6 +46,7 @@ function themeset ()
     feh --bg-scale $1
     spicetify -q update
     i3-msg -q restart
+    zathura-pywal -a .88 > /dev/null
     wal --preview
 }
 
