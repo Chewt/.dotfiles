@@ -66,6 +66,9 @@ exec --no-startup-id blueman-applet
 # Start Picom
 exec --no-startup-id picom -b --backend xrender
 
+# Start Noisetorch
+exec --no-startup-id noisetorch
+
 # Start pasystray
 exec pasystray &
 
@@ -74,8 +77,6 @@ exec--no-startup-id playerctld daemon
 
 # Wallpaper
 exec_always $HOME/.fehbg
-
-#smart_gaps on
 
 # Gaps
 gaps inner 10
