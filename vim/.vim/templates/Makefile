@@ -1,6 +1,6 @@
 SRCDIR = src
 OBJDIR = obj
-INCLUDEDIR = include
+INCLUDEDIR = inc
 SOURCES = $(wildcard $(SRCDIR)/*.c)
 OBJECTS = $(SOURCES:$(SRCDIR)%.c=$(OBJDIR)%.o)
 INCLUDES = $(SOURCES:$(SRCDIR)%.c=$(INCLUDEDIR)%.h)
