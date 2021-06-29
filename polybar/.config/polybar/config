@@ -25,9 +25,9 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/main]
-monitor = DP-0
+;monitor = DP-1
 width = 100%
-height = 26
+height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -81,7 +81,7 @@ cursor-scroll = ns-resize
 
 [bar/second]
 inherit = bar/main
-monitor = HDMI-0
+monitor = HDMI-1
 tray-position = right
 tray-padding = 2
 tray-background = ${colors.primary}
@@ -141,6 +141,17 @@ label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
+ws-icon-0 = 1;Terminal
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;Zoom
+ws-icon-7 = 8;Social
+ws-icon-8 = 9;Music
+ws-icon-9 = 10;Browser
+ws-icon-default = ♟
 ;format = <label-state> <label-mode>
 index-sort = true
 ;wrapping-scroll = false
@@ -153,24 +164,24 @@ label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary};
 
 ; focused = Active workspace on focused monitor
-;label-focused = %icon%
+label-focused = %icon%
 label-focused-background = ${colors.primary}
 label-focused-foreground = ${colors.foreground-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-;label-unfocused = %icon%
+label-unfocused = %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-;label-visible = %icon%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-;label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 

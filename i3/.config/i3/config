@@ -73,13 +73,13 @@ exec --no-startup-id noisetorch
 exec pasystray &
 
 # Start playerctl daemon
-exec--no-startup-id playerctld daemon
+exec --no-startup-id playerctld daemon
 
 # Wallpaper
 exec_always $HOME/.fehbg
 
 # Gaps
-gaps inner 10
+gaps inner 9
 gaps outer 5
 
 # Use pactl to adjust volume in PulseAudio.
@@ -163,28 +163,28 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "Terminal"
+set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "Zoom"
-set $ws8 "Social"
-set $ws9 "Music"
-set $ws10 "Browser"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # Map workspaces to different outputs
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output DP-0
-workspace $ws4 output DP-0
-workspace $ws5 output DP-0
-workspace $ws6 output HDMI-0
-workspace $ws7 output HDMI-0
-workspace $ws8 output HDMI-0
-workspace $ws9 output HDMI-0
-workspace $ws10 output HDMI-0
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+workspace $ws6 output HDMI-1
+workspace $ws7 output HDMI-1
+workspace $ws8 output HDMI-1
+workspace $ws9 output HDMI-1
+workspace $ws10 output HDMI-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
