@@ -11,7 +11,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt extendedglob nomatch
 unsetopt autocd beep
-bindkey -v
+#bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/hayden/.zshrc'
@@ -46,6 +46,8 @@ function themeset ()
     feh --bg-scale $1
     spicetify -q update
     i3-msg -q restart
+    #swaymsg -q restart
+    #swaymsg output "*" background $(pwd)/$1 fill
     zathura-pywal -a .88 > /dev/null
     wal --preview
 }
