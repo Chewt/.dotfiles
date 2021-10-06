@@ -26,8 +26,8 @@ set shiftwidth=4
 set expandtab
 highlight ColorColumn ctermbg=lightgray
 set so=5
-set cc=81
-setl tw=80
+set cc=0
+setl tw=0
 set nofoldenable
 
 " Set omnicomplete options
@@ -120,6 +120,8 @@ autocmd FileType tex imap ;itm <ESC>:-1read
             \ ~/.vim/templates/tex/item.tex<CR>4==i;n
 
 " C and C++
+autocmd FileType c,cpp  setlocal tw=80
+autocmd FileType c,cpp  setlocal cc=81
 autocmd FileType c,cpp  inoremap ;; <ESC>A;
 autocmd FileType c,cpp  nnoremap <Leader>c :read 
             \ ~/.vim/templates/c/f_header.c<CR>jA
