@@ -85,7 +85,11 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 "" Snippets and Lang Specific Binds
 " Latex
 autocmd FileType plaintex setlocal ft=tex
+autocmd Filetype tex let g:tex_flavor='latex'
 autocmd Filetype tex let g:vimtex_view_general_viewer='zathura'
+autocmd Filetype tex let g:vimtex_quickfix_mode=0
+autocmd Filetype tex setlocal conceallevel=1
+autocmd Filetype tex let g:tex_conceal='abdmg'
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex inoremap ;n <ESC>/(<>)<CR>cf)
 autocmd FileType tex nmap ;art :-1read
@@ -102,6 +106,18 @@ autocmd FileType tex imap ;mt <ESC>:read
             \ ~/.vim/templates/tex/math.tex<CR>5==i;n
 autocmd FileType tex imap ;code <ESC>:-1read
             \ ~/.vim/templates/tex/code.tex<CR>4==i;n
+autocmd FileType tex imap ;sub <ESC>:-1read
+            \ ~/.vim/templates/tex/sub.tex<CR>2==i;n
+autocmd FileType tex imap ;sec <ESC>:-1read
+            \ ~/.vim/templates/tex/section.tex<CR>2==i;n
+autocmd FileType tex imap ;def <ESC>:-1read
+            \ ~/.vim/templates/tex/def.tex<CR>3==i;n
+autocmd FileType tex imap ;tht <ESC>:-1read
+            \ ~/.vim/templates/tex/thought.tex<CR>3==i;n
+autocmd FileType tex imap ;img <ESC>:-1read
+            \ ~/.vim/templates/tex/image.tex<CR>2==i;n
+autocmd FileType tex imap ;itm <ESC>:-1read
+            \ ~/.vim/templates/tex/item.tex<CR>4==i;n
 
 " C and C++
 autocmd FileType c,cpp  inoremap ;; <ESC>A;
@@ -134,8 +150,8 @@ autocmd FileType html imap ;div <ESC>:-1read
 autocmd FileType css nnoremap <Leader>c maI/*<ESC>A*/<ESC>`a
 autocmd FileType css nnoremap <Leader>dc ma^xxV/\%V*\/$<CR><ESC>xx`a
 
-" Markdown
-autocmd FileType markdown setlocal spell spelllang=en_us
+" Markdown and Text files
+autocmd FileType markdown,text setlocal spell spelllang=en_us
 autocmd FileType markdown nnoremap <c-p> :!markdown_previewer %<CR>:redraw!<CR>
 
 " Rust
