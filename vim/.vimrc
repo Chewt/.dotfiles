@@ -85,6 +85,8 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 "" Snippets and Lang Specific Binds
 " Latex
 autocmd FileType plaintex setlocal ft=tex
+autocmd FileType tex setlocal cc=81
+autocmd FileType tex setlocal tw=80
 autocmd Filetype tex let g:tex_flavor='latex'
 autocmd Filetype tex let g:vimtex_view_general_viewer='zathura'
 autocmd Filetype tex let g:vimtex_quickfix_mode=0
@@ -118,6 +120,8 @@ autocmd FileType tex imap ;img <ESC>:-1read
             \ ~/.vim/templates/tex/image.tex<CR>2==i;n
 autocmd FileType tex imap ;itm <ESC>:-1read
             \ ~/.vim/templates/tex/item.tex<CR>4==i;n
+autocmd FileType tex imap ;emp <CR><ESC>:-1read
+            \ ~/.vim/templates/tex/emph.tex<CR>kJJ==I;n 
 
 " C and C++
 autocmd FileType c,cpp  setlocal tw=80
