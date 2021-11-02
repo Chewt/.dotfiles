@@ -27,7 +27,7 @@ set expandtab
 highlight ColorColumn ctermbg=lightgray
 set so=5
 set cc=0
-setl tw=0
+set tw=0
 set nofoldenable
 
 " Set omnicomplete options
@@ -91,9 +91,12 @@ autocmd Filetype tex let g:vimtex_quickfix_mode=0
 autocmd Filetype tex setlocal conceallevel=1
 autocmd Filetype tex let g:tex_conceal='abdmg'
 autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType tex setlocal tw=80
 autocmd FileType tex inoremap ;n <ESC>/(<>)<CR>cf)
 autocmd FileType tex nmap ;art :-1read
             \ ~/.vim/templates/tex/art_template.tex<CR>i;n
+autocmd FileType tex nmap ;ess :-1read
+            \ ~/.vim/templates/tex/essay.tex<CR>:!touch bib.bib<CR><CR>i;n
 autocmd FileType tex imap ;tab <ESC>:-1read
                         \ ~/.vim/templates/tex/table_template.tex<CR>5==i;n
 autocmd FileType tex imap ;enum <ESC>:-1read
@@ -118,6 +121,8 @@ autocmd FileType tex imap ;img <ESC>:-1read
             \ ~/.vim/templates/tex/image.tex<CR>2==i;n
 autocmd FileType tex imap ;itm <ESC>:-1read
             \ ~/.vim/templates/tex/item.tex<CR>4==i;n
+autocmd FileType tex imap ;cit <CR><ESC>:-1read
+            \ ~/.vim/templates/tex/cite.tex<CR>kJJ==I;n
 
 " C and C++
 autocmd FileType c,cpp  setlocal tw=80
