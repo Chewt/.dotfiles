@@ -22,11 +22,13 @@ local lsp = vim.lsp
 local handlers = lsp.handlers
 
 --Hover box
-vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+
 --Jump to definition
-vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+
 --Omnifunc
-vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 --Treesitter for syntax highlighting
 require'nvim-treesitter.configs'.setup {
@@ -42,9 +44,7 @@ require'nvim-treesitter.configs'.setup {
     "c"
   },
 }
-
 EOF
-
 
 "" Options
 filetype plugin indent on
@@ -126,6 +126,8 @@ autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex inoremap ;n <ESC>/(<>)<CR>cf)
 autocmd FileType tex nmap ;art :-1read
             \ ~/.vim/templates/tex/art_template.tex<CR>i;n
+autocmd FileType tex nmap ;ess :-1read
+            \ ~/.vim/templates/tex/essay.tex<CR>i;n
 autocmd FileType tex imap ;tab <ESC>:-1read
                         \ ~/.vim/templates/tex/table_template.tex<CR>5==i;n
 autocmd FileType tex imap ;enum <ESC>:-1read
@@ -152,6 +154,10 @@ autocmd FileType tex imap ;itm <ESC>:-1read
             \ ~/.vim/templates/tex/item.tex<CR>4==i;n
 autocmd FileType tex imap ;emp <CR><ESC>:-1read
             \ ~/.vim/templates/tex/emph.tex<CR>kJJ==I;n 
+autocmd FileType tex imap ;cit <CR><ESC>:-1read
+            \ ~/.vim/templates/tex/cite.tex<CR>kJJ==I;n
+autocmd FileType tex nmap ;ros :-1read
+            \ ~/.vim/templates/tex/rosulek.tex<CR>
 
 " C and C++
 autocmd FileType c,cpp  setlocal tw=80
