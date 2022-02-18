@@ -44,7 +44,9 @@ require'nvim-treesitter.configs'.setup {
     "c"
   },
 }
+
 EOF
+
 
 "" Options
 filetype plugin indent on
@@ -104,6 +106,8 @@ nnoremap <Leader>h :cp<CR>
 nnoremap <Leader>o :copen<CR>
 nnoremap <Leader>g :Termdebug<CR>
 inoremap <c-s> <Del>
+nnoremap <Leader>cd :Copilot disable<CR>
+nnoremap <Leader>ce :Copilot enable<CR>
 
 "" Netrw options
 let g:netrw_banner=0

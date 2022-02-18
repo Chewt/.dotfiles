@@ -77,6 +77,9 @@ exec --no-startup-id picom -b --backend xrender
 # Start Noisetorch
 exec --no-startup-id noisetorch
 
+# Start Flameshot
+exec --no-startup-id flameshot
+
 # Start pasystray
 exec pasystray &
 
@@ -112,6 +115,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
+
+# Capture a screenshot
+bindsym  Mod4+Shift+s exec --no-startup-id flameshot gui
 
 # kill focused window
 bindsym $mod+w kill
