@@ -2,7 +2,7 @@
 let maplocalleader = ";"
 call plug#begin(stdpath('data') . '/plugged')
 
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
 "Plug 'sheerun/vim-polyglot'
@@ -10,8 +10,7 @@ Plug 'lervag/vimtex'
 Plug 'dylanaraps/wal.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'github/copilot.vim'
-
+"Plug 'github/copilot.vim'
 call plug#end()
 
 "lsp stuff
@@ -79,8 +78,7 @@ augroup END
 "let g:gruvbox_contrast_dark='hard'
 "let g:gruvbox_italic=0
 "set termguicolors
-"colorscheme gruvbox
-colorscheme wal
+colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
 " Spell Highlighting
@@ -129,69 +127,69 @@ autocmd Filetype tex let g:tex_conceal='abdmg'
 autocmd FileType tex setlocal spell spelllang=en_us
 autocmd FileType tex inoremap ;n <ESC>/(<>)<CR>cf)
 autocmd FileType tex nmap ;art :-1read
-            \ ~/.vim/templates/tex/art_template.tex<CR>i;n
+            \ ~/.config/nvim/templates/tex/art_template.tex<CR>i;n
 autocmd FileType tex nmap ;ess :-1read
-            \ ~/.vim/templates/tex/essay.tex<CR>i;n
+            \ ~/.config/nvim/templates/tex/essay.tex<CR>i;n
 autocmd FileType tex imap ;tab <ESC>:-1read
-                        \ ~/.vim/templates/tex/table_template.tex<CR>5==i;n
+                        \ ~/.config/nvim/templates/tex/table_template.tex<CR>5==i;n
 autocmd FileType tex imap ;enum <ESC>:-1read
-            \ ~/.vim/templates/tex/enum.tex<CR>6==i;n
+            \ ~/.config/nvim/templates/tex/enum.tex<CR>6==i;n
 autocmd FileType tex imap ;fr <CR><ESC>:-1read
-            \ ~/.vim/templates/tex/frac.tex<CR>kJJBhxI;n
+            \ ~/.config/nvim/templates/tex/frac.tex<CR>kJJBhxI;n
 autocmd FileType tex imap ;mi <CR><ESC>:-1read
-            \ ~/.vim/templates/tex/inline.tex<CR>kJJ==I;n
+            \ ~/.config/nvim/templates/tex/inline.tex<CR>kJJ==I;n
 autocmd FileType tex imap ;mt <ESC>:read
-            \ ~/.vim/templates/tex/math.tex<CR>5==i;n
+            \ ~/.config/nvim/templates/tex/math.tex<CR>5==i;n
 autocmd FileType tex imap ;code <ESC>:-1read
-            \ ~/.vim/templates/tex/code.tex<CR>4==i;n
+            \ ~/.config/nvim/templates/tex/code.tex<CR>4==i;n
 autocmd FileType tex imap ;sub <ESC>:-1read
-            \ ~/.vim/templates/tex/sub.tex<CR>2==i;n
+            \ ~/.config/nvim/templates/tex/sub.tex<CR>2==i;n
 autocmd FileType tex imap ;sec <ESC>:-1read
-            \ ~/.vim/templates/tex/section.tex<CR>2==i;n
+            \ ~/.config/nvim/templates/tex/section.tex<CR>2==i;n
 autocmd FileType tex imap ;def <ESC>:-1read
-            \ ~/.vim/templates/tex/def.tex<CR>3==i;n
+            \ ~/.config/nvim/templates/tex/def.tex<CR>3==i;n
 autocmd FileType tex imap ;tht <ESC>:-1read
-            \ ~/.vim/templates/tex/thought.tex<CR>3==i;n
+            \ ~/.config/nvim/templates/tex/thought.tex<CR>3==i;n
 autocmd FileType tex imap ;img <ESC>:-1read
-            \ ~/.vim/templates/tex/image.tex<CR>2==i;n
+            \ ~/.config/nvim/templates/tex/image.tex<CR>2==i;n
 autocmd FileType tex imap ;itm <ESC>:-1read
-            \ ~/.vim/templates/tex/item.tex<CR>4==i;n
+            \ ~/.config/nvim/templates/tex/item.tex<CR>4==i;n
 autocmd FileType tex imap ;emp <CR><ESC>:-1read
-            \ ~/.vim/templates/tex/emph.tex<CR>kJJ==I;n 
+            \ ~/.config/nvim/templates/tex/emph.tex<CR>kJJ==I;n 
 autocmd FileType tex imap ;cit <CR><ESC>:-1read
-            \ ~/.vim/templates/tex/cite.tex<CR>kJJ==I;n
+            \ ~/.config/nvim/templates/tex/cite.tex<CR>kJJ==I;n
 autocmd FileType tex nmap ;ros :-1read
-            \ ~/.vim/templates/tex/rosulek.tex<CR>
+            \ ~/.config/nvim/templates/tex/rosulek.tex<CR>
 
 " C and C++
 autocmd FileType c,cpp  setlocal tw=80
 autocmd FileType c,cpp  setlocal cc=81
 autocmd FileType c,cpp  inoremap ;; <ESC>A;
 autocmd FileType c,cpp  nnoremap <Leader>c :read 
-            \ ~/.vim/templates/c/f_header.c<CR>jA
+            \ ~/.config/nvim/templates/c/f_header.c<CR>jA
 autocmd FileType c,cpp nnoremap <Leader>r :silent !cat Makefile \|
             \ grep "INCLUDEDIR = " \| sed -e "s/^.*= /clang\n-I/" > .ccls<CR>:redraw!<CR>:LspRestart<CR>
 
 " Makefile
 autocmd FileType make inoremap ;n <ESC>/(<>)<CR>cf)
-autocmd FileType make nmap ;make :-1read ~/.vim/templates/Makefile<CR>ggi;n
+autocmd FileType make nmap ;make :-1read ~/.config/nvim/templates/Makefile<CR>ggi;n
 
 " HTML
 autocmd FileType html setlocal spell spelllang=en_us
 autocmd FileType html setlocal cc=0
 autocmd FileType html inoremap ;n <ESC>/<()><CR>cf>
 autocmd FileType html nmap ;html :-1read
-            \ ~/.vim/templates/html/skel.html<CR>Gddggi;n
+            \ ~/.config/nvim/templates/html/skel.html<CR>Gddggi;n
 autocmd FileType html imap ;p <ESC>:-1read
-            \ ~/.vim/templates/html/paragraph.html<CR>jddk==I;n
+            \ ~/.config/nvim/templates/html/paragraph.html<CR>jddk==I;n
 autocmd FileType html imap ;ref <ESC>:-1read
-            \ ~/.vim/templates/html/href.html<CR>jddk==I;n
+            \ ~/.config/nvim/templates/html/href.html<CR>jddk==I;n
 autocmd FileType html imap ;css <ESC>:-1read
-            \ ~/.vim/templates/html/css.html<CR>jddk==I;n
+            \ ~/.config/nvim/templates/html/css.html<CR>jddk==I;n
 autocmd FileType html imap ;js <ESC>:-1read
-            \ ~/.vim/templates/html/js.html<CR>jddk==I;n
+            \ ~/.config/nvim/templates/html/js.html<CR>jddk==I;n
 autocmd FileType html imap ;div <ESC>:-1read
-            \ ~/.vim/templates/html/div.html<CR>jjjddkkk3==I;n
+            \ ~/.config/nvim/templates/html/div.html<CR>jjjddkkk3==I;n
 " CSS
 autocmd FileType css nnoremap <Leader>c maI/*<ESC>A*/<ESC>`a
 autocmd FileType css nnoremap <Leader>dc ma^xxV/\%V*\/$<CR><ESC>xx`a
