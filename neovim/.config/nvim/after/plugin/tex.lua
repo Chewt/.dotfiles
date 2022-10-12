@@ -10,6 +10,8 @@ function vimtex_setup()
     --vim.bo.filetype = 'tex'
     setl.spell = true
     setl.spelllang = "en_us"
+    setl.textwidth = 80
+    setl.colorcolumn = "81"
     vim.g.tex_flavor = "latex"
     vim.g.vimtex_view_general_viewer = 'zathura'
     vim.g.vimtex_quickfix_mode = 0
@@ -34,8 +36,10 @@ function vimtex_setup()
     keymap("n", ";ros", ":-1read "..texpath.."rosulek.tex<CR>", re)
     keymap("i", ";2mat", "<CR>"..escr..texpath.."22mat.tex<CR>kJ4==I;n", re)
     keymap("i", ";3mat", "<CR>"..escr..texpath.."33mat.tex<CR>kJ5==I;n", re)
+    keymap("i", ";3aug", "<CR>"..escr..texpath.."3aug.tex<CR>kJ5==I;n", re)
     keymap("i", ";4mat", "<CR>"..escr..texpath.."44mat.tex<CR>kJ6==I;n", re)
     keymap("i", ";plt", "<CR>"..escr..texpath.."plot.tex<CR>kJ6==I;n", re)
+    keymap("i", ";aln", escr..texpath.."align.tex<CR>5==i;n", re)
 end
 
 vim.api.nvim_create_autocmd("FileType", {
