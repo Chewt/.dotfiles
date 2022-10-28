@@ -5,6 +5,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
 Plug 'neovim/nvim-lspconfig'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['nvim-treesitter#TSUpdate']})
 
 vim.call('plug#end')

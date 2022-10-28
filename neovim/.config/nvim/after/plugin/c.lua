@@ -4,7 +4,6 @@ function c_setup()
     local keymap = vim.api.nvim_set_keymap
     local re = { noremap = false }
     local nore = { noremap = true }
-    local rpath = "~/.config/nvim/templates/c"
 
     setl.textwidth = 80
     setl.colorcolumn = "81"

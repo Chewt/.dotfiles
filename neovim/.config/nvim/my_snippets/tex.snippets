@@ -1,0 +1,58 @@
+# Inline Math Environment
+snippet mi 
+\$$1\$$0
+endsnippet
+
+# Math Environment
+snippet mt
+\\[
+	$1
+\\]
+endsnippet
+
+# Augmented Matrix
+snippet aug
+\\left[\\hspace{-5pt}\\begin{array}{${1:cc}|${2:c}}
+	${0:${VISUAL}}
+\\end{array}\\hspace{-5pt}\\right]
+endsnippet
+
+# Article Template
+snippet art
+\\documentclass[a4paper,12pt]{article}
+
+\\usepackage{blindtext}
+\\usepackage{mathptmx}
+\\usepackage{graphicx}
+\\usepackage{enumitem}
+\\usepackage{amsmath}
+\\usepackage{amsfonts}
+\\usepackage{array}
+\\usepackage[margin=1in]{geometry}
+\\usepackage{listings}
+\\usepackage{framed}
+\\usepackage[framed]{ntheorem}
+\\usepackage{pgfplots}
+\\usepackage{float}
+\\pgfplotsset{compat=newest}
+
+\\theoremstyle{nonumberplain}
+\\newframedtheorem{frm-thm}{Definition}
+\\newframedtheorem{frm-tht}{Note}
+
+\\setlength{\parindent}{0em}
+\\setlength{\parskip}{1em}
+
+\\graphicspath{{./}}
+
+\\begin{document}
+
+\\title{$1}
+\\author{Hayden Johnson}
+\\maketitle
+
+\\subsection*{$2}
+$0
+
+\end{document}
+endsnippet

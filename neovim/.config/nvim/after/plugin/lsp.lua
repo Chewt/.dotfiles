@@ -5,6 +5,7 @@ lspconfig.pylsp.setup{
         pylsp = {
             plugins = {
                 pycodestyle = {
+                    enabled = true,
                     maxLineLength = 88,
                     ignore = {'E203', 'E501'},
                     select = {'C', 'E', 'F', 'W', 'B', 'B950'}

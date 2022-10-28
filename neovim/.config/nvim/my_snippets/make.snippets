@@ -1,3 +1,5 @@
+# Makefile template
+snippet make
 SRCDIR = src
 OBJDIR = obj
 INCLUDEDIR = inc
@@ -7,7 +9,7 @@ INCLUDES = $(SOURCES:$(SRCDIR)%.c=$(INCLUDEDIR)%.h)
 UNIDEPS = 
 CFLAGS = -I$(INCLUDEDIR) -O2
 CC = gcc
-TARGET = (<>)
+TARGET = $1
 
 .PHONY: all 
 all: $(TARGET)
@@ -31,3 +33,4 @@ $(UNIDEPS):
 .PHONY: clean
 clean: 
 	rm -rf $(OBJDIR)/*.o $(TARGET)
+endsnippet
