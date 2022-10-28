@@ -1,3 +1,28 @@
+global !p
+
+def create_matrix(snip):
+	rows = snip.buffer[snip.line].split('x')[0]
+	cols = snip.buffer[snip.line].split('x')[1]
+	int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
+	rows = int_val(rows)
+	cols = int_val(cols)
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+	snip.buffer[snip.line] = ''
+	final_str = old_spacing + "\\begin{bmatrix}\n"
+	for i in range(rows):
+		final_str += old_spacing + '\t'
+		final_str += " & ".join(['$' + str(i * cols + j + 1) for j in range(cols)])
+		final_str += " \\\\\\\n"
+	final_str += old_spacing + "\\end{bmatrix}\n$0"
+	snip.expand_anon(final_str)
+
+endglobal
+
+# smart matrix
+pre_expand "create_matrix(snip)"
+snippet "mat(\d+)x(\d+)" "Generate matrix of *rows* by *cols*" r
+endsnippet
+
 # Inline Math Environment
 snippet mi 
 \$$1\$$0
