@@ -23,24 +23,35 @@ pre_expand "create_matrix(snip)"
 snippet "mat(\d+)x(\d+)" "Generate matrix of *rows* by *cols*" r
 endsnippet
 
-# Inline Math Environment
-snippet mi 
-\$$1\$$0
-endsnippet
-
-# Math Environment
-snippet mt
-\\[
-	$1
-\\]
-endsnippet
-
 # Augmented Matrix
 snippet aug
 \\left[\\hspace{-5pt}\\begin{array}{${1:cc}|${2:c}}
 	${0:${VISUAL}}
 \\end{array}\\hspace{-5pt}\\right]
 endsnippet
+
+# smart augmented matrix
+pre_expand "create_augmented_matrix(snip)"
+snippet "aug(\d+)x(\d+)" "Generate augmented matrix of *rows* by *cols*" r
+endsnippet
+
+# Inline Math Environment
+snippet mi 
+\$${1:${VISUAL}}\$$0
+endsnippet
+
+# Math Environment
+snippet mt
+\\[
+	${0:${VISUAL}}
+\\]
+endsnippet
+
+# Right Arrow
+snippet to
+\\to $0
+endsnippet
+
 
 # Article Template
 snippet art
