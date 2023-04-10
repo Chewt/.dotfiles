@@ -8,5 +8,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['nvim-treesitter#TSUpdate']})
+Plug 'kaarmu/typst.vim'
 
 vim.call('plug#end')
