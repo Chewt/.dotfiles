@@ -8,5 +8,7 @@ vim.opt.foldenable = false
 vim.opt.hlsearch = false
 vim.opt.nu = true
 vim.opt.rnu = true
+vim.opt.path:append('**')
+vim.opt.wildmenu = true
 
 vim.g.maplocalleader = ';'
