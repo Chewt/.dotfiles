@@ -15,5 +15,6 @@ Plug 'lervag/vimtex'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['nvim-treesitter#TSUpdate']})
 Plug 'kaarmu/typst.vim'
 Plug 'mfussenegger/nvim-jdtls'
+Plug('akinsho/bufferline.nvim', { ['tag'] = '*' })
 
 vim.call('plug#end')
