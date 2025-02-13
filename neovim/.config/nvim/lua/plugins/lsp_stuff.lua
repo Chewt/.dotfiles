@@ -33,6 +33,9 @@ return {
             })
             vim.diagnostic.config { virtual_text = true }
 
+            -- Set up gdscript suppor (godot script)
+            require('lspconfig').gdscript.setup {}
+
             local cmp = require('cmp')
             cmp.setup({
                 mapping = {
