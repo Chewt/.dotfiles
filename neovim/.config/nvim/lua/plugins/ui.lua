@@ -20,16 +20,7 @@ return {
             },
             pickers = {},
             extensions = {
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown {
-                        -- even more opts
-                    }
-                    -- Your extension configuration goes here:
-                    -- extension_name = {
-                    --   extension_config_key = value,
-                    -- }
-                    -- please take a look at the readme of the extension you want to configure
-                }
+                ["ui-select"] = { }
             }
         },
         keys = {
