@@ -3,7 +3,6 @@ return {
         'nvim-telescope/telescope.nvim', version = '*',
         dependencies = {
             {'nvim-lua/plenary.nvim',},
-            {'nvim-telescope/telescope-ui-select.nvim',}
         },
         opts = {
             defaults = {
@@ -19,13 +18,12 @@ return {
                 }
             },
             pickers = {},
-            extensions = {
-                ["ui-select"] = { }
-            }
+            extensions = {},
         },
         keys = {
             {'<C-f>', function() require('telescope.builtin').find_files() end },
             {'<C-g>', function() require('telescope.builtin').live_grep() end },
+            {'gr', function() require('telescope.builtin').lsp_references() end },
         }
     },
     {
