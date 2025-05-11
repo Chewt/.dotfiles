@@ -1,9 +1,5 @@
 splitw -h -c "#{pane_current_path}"
 selectp -t 0
-resize-pane -x 85
-selectp -t 1
-splitw -h -c "#{pane_current_path}"
-resize-pane -x 85
 selectp -t 1
 splitw -v -c "#{pane_current_path}"
-selectp -t 0
+selectp -t 1
