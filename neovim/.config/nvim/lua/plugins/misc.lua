@@ -3,20 +3,66 @@ return {
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        keys = {
-            { '<C-e>', function() require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list()) end },
-            { '<C-h>', function() require('harpoon'):list():select(1) end },
-            { '<C-t>', function() require('harpoon'):list():select(2) end },
-            { '<C-n>', function() require('harpoon'):list():select(3) end },
-            { '<C-s>', function() require('harpoon'):list():select(4) end },
+        opts = {
+            menu = {
+                width = vim.api.nvim_win_get_width(0) - 4,
+            },
+            settings = {
+                save_on_toggle = true,
+            },
         },
+        keys = function()
+            local keys = {
+                {
+                    "g<C-e>",
+                    function()
+                        require("harpoon"):list():add()
+                    end,
+                    desc = "Harpoon File",
+                },
+                {
+                    "<C-e>",
+                    function()
+                        local harpoon = require("harpoon")
+                        harpoon.ui:toggle_quick_menu(harpoon:list())
+                    end,
+                    desc = "Harpoon Quick Menu",
+                },
+                {
+                    "<C-h>",
+                    function()
+                        require("harpoon"):list():select(1)
+                    end,
+                    desc = "Harpoon to File 1",
+                },
+                {
+                    "<C-t>",
+                    function()
+                        require("harpoon"):list():select(2)
+                    end,
+                    desc = "Harpoon to File 2",
+                },
+                {
+                    "<C-n>",
+                    function()
+                        require("harpoon"):list():select(3)
+                    end,
+                    desc = "Harpoon to File 3",
+                },
+                {
+                    "<C-s>",
+                    function()
+                        require("harpoon"):list():select(4)
+                    end,
+                    desc = "Harpoon to File 4",
+                },
+            }
+            return keys
+        end,
     },
     -- This is for git stuff
     {'tpope/vim-fugitive'},
     -- AI Related things
-    
-    -- Custom Parameters (with defaults)
     {
         "David-Kunz/gen.nvim",
         opts = {
