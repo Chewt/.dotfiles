@@ -36,6 +36,35 @@ return {
             -- Set up gdscript suppor (godot script)
             require('lspconfig').gdscript.setup {}
 
+            -- Set up zig language server
+            require('lspconfig').zls.setup {
+                -- Server-specific settings. See `:help lspconfig-setup`
+
+                -- omit the following line if `zls` is in your PATH
+                -- cmd = { '/path/to/zls_executable' },
+                -- There are two ways to set config options:
+                --   - edit your `zls.json` that applies to any editor that uses ZLS
+                --   - set in-editor config options with the `settings` field below.
+                --
+                -- Further information on how to configure ZLS:
+                -- https://zigtools.org/zls/configure/
+                settings = {
+                    zls = {
+                        -- Whether to enable build-on-save diagnostics
+                        --
+                        -- Further information about build-on save:
+                        -- https://zigtools.org/zls/guides/build-on-save/
+                        -- enable_build_on_save = true,
+
+                        -- Neovim already provides basic syntax highlighting
+                        semantic_tokens = "partial",
+
+                        -- omit the following line if `zig` is in your PATH
+                        -- zig_exe_path = '/path/to/zig_executable'
+                    }
+                }
+            }
+
             local cmp = require('cmp')
             cmp.setup({
                 mapping = {
@@ -49,16 +78,17 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function () 
+        config = function ()
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
                 sync_install = false,
                 highlight = { enable = true },
-                indent = { enable = true },  
+                indent = { enable = true },
             })
         end
     },
     {'kaarmu/typst.vim',},
+    {'ziglang/zig.vim',},
 }
