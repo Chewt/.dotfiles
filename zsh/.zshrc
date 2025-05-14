@@ -46,6 +46,14 @@ fi
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target,__pycache__,.venv
+  --preview 'tree -C {}'"
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target,__pycache__,.venv
+  --preview 'batcat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
