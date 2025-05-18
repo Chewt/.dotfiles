@@ -66,7 +66,7 @@ return {
     {
         "David-Kunz/gen.nvim",
         opts = {
-            model = "gemma3:12b-it-qat", -- The default model to use.
+            model = "qwen3:14b", -- The default model to use.
             quit_map = "q", -- set keymap to close the response window
             accept_map = "<c-cr>", -- set keymap to replace the previous selection with the last result
             host = "localhost", -- The host running the Ollama service.
