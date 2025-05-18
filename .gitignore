@@ -4,6 +4,4 @@ vim/.vim/plugged/
 neovim/.config/nvim/plugged/
 neovim/.config/nvim/lazy-lock.json
 vim/.vim/spell/
-
-# hypr
 hypr/.config/hypr/monitors.conf
