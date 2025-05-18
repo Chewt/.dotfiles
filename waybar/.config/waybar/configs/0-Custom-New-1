@@ -13,6 +13,7 @@
         "cpu",
         "memory",
         "pulseaudio",
+        "battery",
         "power-profiles-daemon"
     ],
     "hyprland/workspaces": {
@@ -110,6 +111,21 @@
         "power-saver": ""
       }
     },
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon}",
