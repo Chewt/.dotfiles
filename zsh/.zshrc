@@ -84,3 +84,9 @@ up() {
   cd "$directory_sequence"
   return 0
 }
+
+# ZVM (Zig Version Manager)
+export ZVM_INSTALL=/home/hayden/.local/share/zvm/self
+export PATH=$PATH:/home/hayden/.local/share/zvm/bin
+export PATH=$PATH:$ZVM_INSTALL
+
