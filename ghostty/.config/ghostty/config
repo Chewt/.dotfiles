@@ -4,5 +4,5 @@ gtk-single-instance = true
 resize-overlay = never
 shell-integration = zsh
 keybind = ctrl+shift+ =write_screen_file:paste
-font-size = 9
-font-family = Fira Code Regular
+
+config-file = device-specific
