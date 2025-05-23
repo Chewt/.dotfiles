@@ -85,7 +85,8 @@ up() {
   return 0
 }
 
-# ZVM (Zig Version Manager)
+# ZVM (Zig Version Manager) 
+# install with curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
 export ZVM_INSTALL=/home/hayden/.local/share/zvm/self
 export PATH=$PATH:/home/hayden/.local/share/zvm/bin
 export PATH=$PATH:$ZVM_INSTALL
