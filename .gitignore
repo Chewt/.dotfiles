@@ -14,3 +14,6 @@ vim/.vim/spell/
 waybar/.config/waybar/wallust/colors-waybar.css
 
 ghostty/.config/ghostty/device-specific
+
+rofi/.config/rofi/wallust/
+rofi/.config/rofi/.current_wallpaper
