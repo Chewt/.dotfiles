@@ -10,5 +10,6 @@ vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.path:append('**')
 vim.opt.wildmenu = true
+vim.opt.undofile = true
 
 vim.g.maplocalleader = ';'
