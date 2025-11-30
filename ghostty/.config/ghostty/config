@@ -1,4 +1,4 @@
-theme = nightfox
+theme = Nightfox
 gtk-titlebar = false
 gtk-single-instance = true
 resize-overlay = never
