@@ -14,6 +14,7 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+DISABLE_AUTO_UPDATE=true
 source $ZSH/oh-my-zsh.sh
 
 # Check archlinux plugin commands here
@@ -90,4 +91,11 @@ up() {
 export ZVM_INSTALL=/home/hayden/.local/share/zvm/self
 export PATH=$PATH:/home/hayden/.local/share/zvm/bin
 export PATH=$PATH:$ZVM_INSTALL
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/hayden/.dart-cli-completion/zsh-config.zsh ]] && . /home/hayden/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+export PATH="$HOME/fvm/default/bin:$PATH"
 

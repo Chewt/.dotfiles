@@ -65,6 +65,9 @@ return {
                 }
             }
 
+            -- Set up dart language server
+            require('lspconfig').dartls.setup {}
+
             local cmp = require('cmp')
             cmp.setup({
                 mapping = {
