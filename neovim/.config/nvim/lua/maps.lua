@@ -2,8 +2,6 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap("i", "{{", "<ESC>A<CR>{<CR>}<ESC>O", { noremap = true })
 vim.api.nvim_set_keymap("i", "((", "()<ESC>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-c>", "<ESC>", { noremap = true })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 local function makefile_setup()
     local keymap = vim.api.nvim_set_keymap
