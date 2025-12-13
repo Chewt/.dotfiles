@@ -119,6 +119,14 @@ dec_mic_volume() {
     fi
 }
 
+# Switch to next sink
+switch_sink() {
+    str="$(pamixer --list-sinks | tail -n +2 | rg -v Running | xargs)"
+    read -r id sink status name <<< "$str"
+    pactl set-default-sink $sink
+    notify-send -e -u low " Audio Sink:" "$name"
+}
+
 # Execute accordingly
 if [[ "$1" == "--get" ]]; then
 	get_volume
@@ -138,6 +146,8 @@ elif [[ "$1" == "--mic-inc" ]]; then
 	inc_mic_volume
 elif [[ "$1" == "--mic-dec" ]]; then
 	dec_mic_volume
+elif [[ "$1" == "--swap-sink" ]]; then
+	switch_sink
 else
 	get_volume
 fi
