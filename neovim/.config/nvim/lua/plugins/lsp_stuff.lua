@@ -21,7 +21,7 @@ return {
                 function(client, bufnr)
                     lsp.default_keymaps({ buffer = bufnr })
                 end)
-            require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+            vim.lsp.config('lua_ls', lsp.nvim_lua_ls())
             lsp.setup()
             require('mason').setup({})
             require('mason-lspconfig').setup({
@@ -34,10 +34,10 @@ return {
             vim.diagnostic.config { virtual_text = true }
 
             -- Set up gdscript suppor (godot script)
-            require('lspconfig').gdscript.setup {}
+            vim.lsp.config('gdscript', {})
 
             -- Set up zig language server
-            require('lspconfig').zls.setup {
+            vim.lsp.config('zls', {
                 -- Server-specific settings. See `:help lspconfig-setup`
 
                 -- omit the following line if `zls` is in your PATH
@@ -63,10 +63,10 @@ return {
                         -- zig_exe_path = '/path/to/zig_executable'
                     }
                 }
-            }
+            })
 
             -- Set up dart language server
-            require('lspconfig').dartls.setup {}
+            vim.lsp.config('dartls', {})
 
             local cmp = require('cmp')
             cmp.setup({
