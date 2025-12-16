@@ -6,7 +6,8 @@
         "hyprland/workspaces",
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "mpris"
     ],
     "modules-right": [
         "tray",
