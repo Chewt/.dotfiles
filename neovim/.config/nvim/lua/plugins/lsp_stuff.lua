@@ -31,7 +31,10 @@ return {
                     lsp.default_setup,
                 },
             })
-            vim.diagnostic.config { virtual_text = true }
+
+
+            vim.keymap.set("n", "<c-w>d", vim.diagnostic.open_float, { noremap = true })
+            vim.diagnostic.config {virtual_text = false}
 
             -- Set up gdscript suppor (godot script)
             vim.lsp.config('gdscript', {})
