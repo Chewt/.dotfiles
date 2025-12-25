@@ -69,10 +69,12 @@ case "$1" in
 		change_backlight "${step}%-"
 		;;
 	"--inc-one")
-		change_backlight "+1%"
+        step=1
+		change_backlight "+${step}%"
 		;;
 	"--dec-one")
-		change_backlight "1%-"
+        step=1
+		change_backlight "${step}%-"
 		;;
 	*)
 		get_backlight
