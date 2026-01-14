@@ -25,6 +25,17 @@ def get_sinks() -> list[Sink]:
     sinks.sort(key=lambda x: x.uid)
     return sinks
 
+def get_default_sink() -> Sink:
+    lines = subprocess.run(["pamixer", "--get-default-sink"], capture_output=True).stdout.decode("utf-8").strip().split('\n')[1:]
+    sinks = []
+    for line in lines:
+        uid, name, description = shlex.split(line)
+        sinks.append(Sink(uid, name, "Idle", description))
+    if len(sinks) == 0:
+        return None
+    sinks.sort(key=lambda x: x.uid)
+    return sinks[0]
+
 # Switch the default sink to the provided sink
 def switch_to_sink(sink: Sink):
     subprocess.run(["pactl", "set-default-sink", sink.name])
@@ -35,18 +46,29 @@ def notify_new_sink(sink: Sink):
 
 def main():
     sinks: list[Sink] = get_sinks()
+    print(sinks)
     found_index = -1
     
     # Find the currently "active" sink
+    active_sink: Sink = get_default_sink()
+    if active_sink is None:
+        print("No Default Sink found")
+        return
+    else:
+        print("Default Sink:", active_sink)
     for i in range(len(sinks)):
-        if sinks[i].status == "Running":
+        if sinks[i].description == active_sink.description:
             found_index = i
             break
+
     # Switch to the next sink in the list
     if found_index != -1:
         next_sink = (found_index + 1) % len(sinks)
+        print("Swapping to", sinks[next_sink])
         switch_to_sink(sinks[next_sink])
         notify_new_sink(sinks[next_sink])
+    else:
+        print("found no running sinks")
 
 
 if __name__ == "__main__":
