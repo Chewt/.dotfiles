@@ -33,4 +33,10 @@ if pgrep -x "rofi" >/dev/null; then
 fi
 
 # Open Rofi and pass the selected query to xdg-open for Google search
-echo "" | rofi -dmenu -config "$rofi_theme" -mesg "$msg" | xargs -I{} xdg-open $Search_Engine
+query=$(echo "" | rofi -dmenu -config "$rofi_theme" -mesg "$msg")
+
+if [[ -n "$query" ]]; then
+    echo "$query" | xargs -I{} xdg-open $Search_Engine
+    # Switch to workspace with firefox on it
+    hyprctl dispatch workspace 2
+fi
