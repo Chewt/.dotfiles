@@ -7,8 +7,7 @@ vim.api.nvim_set_keymap("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 local function makefile_setup()
     local keymap = vim.api.nvim_set_keymap
     local rpath = "~/.config/nvim/templates/"
-    keymap("i", ";n", "<ESC>/(<>)<CR>cf)", { noremap = true })
-    keymap("n", ";make", ":-1read "..rpath.."Makefile<CR>ggi;n", { noremap = false })
+    keymap("n", ";make", ":-1read "..rpath.."Makefile<CR>", { noremap = false })
 end
 
 vim.api.nvim_create_autocmd("Filetype", {
