@@ -9,7 +9,7 @@ vim.opt.hlsearch = false
 vim.opt.nu = true
 
 -- I'm not sure I want to keep using relativenumbers
--- vim.opt.rnu = true
+vim.opt.rnu = true
 
 vim.opt.path:append('**')
 vim.opt.wildmenu = true
