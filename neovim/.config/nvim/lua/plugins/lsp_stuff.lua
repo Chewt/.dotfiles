@@ -1,43 +1,21 @@
 return {
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        'williamboman/mason-lspconfig.nvim',
         dependencies = {
-            {'williamboman/mason.nvim',},
-            {'williamboman/mason-lspconfig.nvim',},
             {'neovim/nvim-lspconfig',},
-            {'hrsh7th/nvim-cmp',},
-            {'hrsh7th/cmp-buffer',},
-            {'hrsh7th/cmp-path',},
-            {'saadparwaiz1/cmp_luasnip',},
-            {'hrsh7th/cmp-nvim-lsp',},
-            {'hrsh7th/cmp-nvim-lua',},
-            {'L3MON4D3/LuaSnip',},
+            {'williamboman/mason.nvim',},
         },
         config = function()
-            local lsp = require('lsp-zero')
-            lsp.preset("recommended")
-            lsp.on_attach(
-                function(client, bufnr)
-                    lsp.default_keymaps({ buffer = bufnr })
-                end)
-            vim.lsp.config('lua_ls', lsp.nvim_lua_ls())
-            lsp.setup()
-            require('mason').setup({})
+            require('mason').setup()
             require('mason-lspconfig').setup({
                 automatic_installation = false,
-                ensure_installed = {},
-                handlers = {
-                    lsp.default_setup,
-                },
             })
-
 
             vim.keymap.set("n", "<c-w>d", vim.diagnostic.open_float, { noremap = true })
             vim.diagnostic.config {virtual_text = false}
 
             -- Set up gdscript suppor (godot script)
-            vim.lsp.config('gdscript', {})
+            vim.lsp.enable('gdscript')
 
             -- Set up zig language server
             vim.lsp.config('zls', {
@@ -67,18 +45,7 @@ return {
                     }
                 }
             })
-
-            -- Set up dart language server
-            vim.lsp.config('dartls', {})
-
-            local cmp = require('cmp')
-            cmp.setup({
-                mapping = {
-                    -- Navigate between snippet placeholder
-                    ['<C-f>'] = lsp.cmp_action().luasnip_jump_forward(),
-                    ['<C-b>'] = lsp.cmp_action().luasnip_jump_backward(),
-                }
-            })
+            vim.lsp.enable('zls')
         end,
     },
     {
