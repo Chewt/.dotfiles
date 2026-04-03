@@ -99,3 +99,6 @@ export PATH=$PATH:$ZVM_INSTALL
 ## [/Completion]
 export PATH="$HOME/fvm/default/bin:$PATH"
 
+# Add personal bin folder to PATH
+export PATH="$HOME/bin:$PATH"
+
