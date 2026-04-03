@@ -3,6 +3,11 @@ gtk-titlebar = false
 gtk-single-instance = true
 resize-overlay = never
 shell-integration = zsh
-keybind = ctrl+shift+ =write_screen_file:paste
 
 config-file = device-specific
+
+unfocused-split-opacity = 1
+
+# Keybindings
+keybind = ctrl+tab=goto_split:next
+keybind = ctrl+shift+tab=goto_split:previous
