@@ -29,7 +29,7 @@ done
 ags -q && ags &
 
 # Wallust refresh
-${SCRIPTSDIR}/WallustSwww.sh &
+${SCRIPTSDIR}/WallustAwww.sh &
 
 # reload swaync
 swaync-client --reload-config
