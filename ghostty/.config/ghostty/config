@@ -3,6 +3,7 @@ gtk-titlebar = false
 gtk-single-instance = true
 resize-overlay = never
 shell-integration = zsh
+window-inherit-working-directory = false
 
 config-file = device-specific
 
