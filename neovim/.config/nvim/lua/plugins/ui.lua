@@ -21,9 +21,10 @@ return {
             extensions = {},
         },
         keys = {
-            {'<C-f>', function() require('telescope.builtin').find_files() end },
-            {'<C-g>', function() require('telescope.builtin').live_grep() end },
-            {'gr', function() require('telescope.builtin').lsp_references() end },
+            {'<C-f>', function() require('telescope.builtin').find_files()     end },
+            {'<C-b>', function() require('telescope.builtin').buffers()        end },
+            {'<C-g>', function() require('telescope.builtin').default()        end },
+            {'gr',    function() require('telescope.builtin').lsp_references() end },
         }
     },
     {
