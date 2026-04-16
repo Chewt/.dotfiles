@@ -102,3 +102,5 @@ export PATH="$HOME/fvm/default/bin:$PATH"
 # Add personal bin folder to PATH
 export PATH="$HOME/bin:$PATH"
 
+# Use nvim as pager for manpages
+export MANPAGER='nvim +Man!'
