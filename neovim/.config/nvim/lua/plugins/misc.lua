@@ -62,4 +62,6 @@ return {
     },
     -- This is for git stuff
     {'tpope/vim-fugitive'},
+    -- For exploing GNU info pages in vim
+    { 'HiPhish/info.vim' }
 }

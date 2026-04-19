@@ -104,3 +104,13 @@ export PATH="$HOME/bin:$PATH"
 
 # Use nvim as pager for manpages
 export MANPAGER='nvim +Man!'
+
+# Similarly use nvim for info pages, which requires the use of the info.vim
+# plugin and a custom function.
+# Create a shell function as a wrapper
+viminfo () {
+    nvim +"Info $@" +only
+}
+# Alias info to our new function
+alias info=viminfo
+
