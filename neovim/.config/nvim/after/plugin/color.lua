@@ -1,2 +1,2 @@
-vim.cmd('colorscheme rose-pine')
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+vim.cmd('colorscheme gruber-darker')
+-- vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
