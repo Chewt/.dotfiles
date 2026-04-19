@@ -2,7 +2,7 @@
 	name = Hayden Johnson
 	email = hajohn100@gmail.com
 [core]
-	editor = /usr/bin/nvim
+	editor = nvim
 [init]
 	defaultBranch = main
 [alias]
