@@ -1,3 +1,6 @@
+-- Enable ui2
+require('vim._core.ui2').enable()
+
 vim.opt.number = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
