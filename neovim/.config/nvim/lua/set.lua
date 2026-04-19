@@ -29,6 +29,9 @@ vim.cmd('com! -nargs=+ Make let &makeprg = "<args>" | make')
 -- Set makeprg temporarily, run make, then set it back
 vim.cmd('com! -nargs=+ Maket let oldmakeprg = &makeprg | let &makeprg = "<args>" | make | let &makeprg = oldmakeprg')
 
+-- Make a new scratch buffer in a new tab
+vim.cmd('com! -nargs=0 Scratch tabnew | set buftype=nofile')
+
 function Align(range_start, range_end, pattern)
     -- Default to '=' for pattern
     pattern = (pattern ~= "" and pattern) or "="
