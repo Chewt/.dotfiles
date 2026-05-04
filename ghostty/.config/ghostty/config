@@ -1,4 +1,4 @@
-theme = 0x96f
+theme = Terafox
 gtk-titlebar = false
 gtk-single-instance = true
 resize-overlay = never
