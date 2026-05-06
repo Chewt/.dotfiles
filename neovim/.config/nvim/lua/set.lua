@@ -21,6 +21,12 @@ vim.o.smartcase = true
 
 vim.g.maplocalleader = ';'
 
+-- Disable providers
+vim.g.loaded_ruby_provider   = 0
+vim.g.loaded_node_provider   = 0
+vim.g.loaded_perl_provider   = 0
+vim.g.loaded_python3_provider = 0
+
 -- Run a command and place its output in a scratch buffer
 vim.cmd('com! -nargs=+ Run split | wincmd j | enew | setlocal buftype=nofile noswapfile bufhidden=wipe nobuflisted | resize 10 | silent -r! <args>')
 
