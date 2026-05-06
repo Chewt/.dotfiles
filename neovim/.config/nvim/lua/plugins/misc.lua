@@ -16,13 +16,6 @@ return {
                 {
                     "g<C-e>",
                     function()
-                        require("harpoon"):list():add()
-                    end,
-                    desc = "Harpoon File",
-                },
-                {
-                    "<C-e>",
-                    function()
                         local harpoon = require("harpoon")
                         harpoon.ui:toggle_quick_menu(harpoon:list())
                     end,
