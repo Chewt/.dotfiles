@@ -22,9 +22,9 @@ vim.o.smartcase = true
 vim.g.maplocalleader = ';'
 
 -- Disable providers
-vim.g.loaded_ruby_provider   = 0
-vim.g.loaded_node_provider   = 0
-vim.g.loaded_perl_provider   = 0
+vim.g.loaded_ruby_provider    = 0
+vim.g.loaded_node_provider    = 0
+vim.g.loaded_perl_provider    = 0
 vim.g.loaded_python3_provider = 0
 
 -- Run a command and place its output in a scratch buffer
@@ -38,6 +38,10 @@ vim.cmd('com! -nargs=+ Maket let oldmakeprg = &makeprg | let &makeprg = "<args>"
 
 -- Make a new scratch buffer in a new tab
 vim.cmd('com! -nargs=0 Scratch tabnew | set buftype=nofile')
+
+-- Show diff between current file state and saved file state
+	 -- command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
+vim.cmd('command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis')
 
 function Align(range_start, range_end, pattern)
     -- Default to '=' for pattern
