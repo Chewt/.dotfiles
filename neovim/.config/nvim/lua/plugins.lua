@@ -153,3 +153,13 @@ require('lualine').setup({
     inactive_winbar = {},
     extensions = { 'fugitive' }
 })
+
+-- Oil.nvim a file manager to replace netrw that supports editing directories as if they were buffers
+vim.pack.add({
+    'https://github.com/stevearc/oil.nvim'
+})
+require('oil').setup({
+    view_options = {
+        show_hidden = true,
+    }
+})

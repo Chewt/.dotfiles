@@ -32,7 +32,7 @@ vim.cmd('colorscheme terafox')
 
 -- Custom Mappings
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<Leader>e', ':Explore<CR>', { noremap = true })
+vim.keymap.set('n', '<Leader>e', ':Oil<CR>', { noremap = true })
 vim.keymap.set('i', '((', '()<ESC>i',            { noremap = true })
 vim.keymap.set('i', '<c-c>', '<ESC>',            { noremap = true })
 vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',      { noremap = true })
