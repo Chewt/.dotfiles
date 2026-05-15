@@ -1,48 +1,6 @@
--- Enable ui2
-require('vim._core.ui2').enable()
-
-vim.opt.number = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.expandtab = true
-vim.opt.so = 5
-vim.opt_local.tw = 0
-vim.opt.foldenable = false
-vim.opt.hlsearch = false
-vim.opt.nu = true
-vim.opt.rnu = true
-
-vim.opt.path:append('**')
-vim.opt.wildmenu = true
-vim.opt.undofile = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
-vim.g.maplocalleader = ';'
-
--- Disable providers
-vim.g.loaded_ruby_provider    = 0
-vim.g.loaded_node_provider    = 0
-vim.g.loaded_perl_provider    = 0
-vim.g.loaded_python3_provider = 0
-
--- Run a command and place its output in a scratch buffer
-vim.cmd('com! -nargs=+ Run split | wincmd j | enew | setlocal buftype=nofile noswapfile bufhidden=wipe nobuflisted | resize 10 | silent -r! <args>')
-
--- Set makeprg and run make in one go
-vim.cmd('com! -nargs=+ Make let &makeprg = "<args>" | make')
-
--- Set makeprg temporarily, run make, then set it back
-vim.cmd('com! -nargs=+ Maket let oldmakeprg = &makeprg | let &makeprg = "<args>" | make | let &makeprg = oldmakeprg')
-
--- Make a new scratch buffer in a new tab
-vim.cmd('com! -nargs=0 Scratch tabnew | set buftype=nofile')
-
--- Show diff between current file state and saved file state
-	 -- command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
-vim.cmd('command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis')
-
+-----------
+-- Align --
+-----------
 function Align(range_start, range_end, pattern)
     -- Default to '=' for pattern
     pattern = (pattern ~= "" and pattern) or "="
@@ -102,3 +60,38 @@ vim.api.nvim_create_user_command(
         preview = preview_align_regex
     }
 )
+
+---------
+-- Run --
+---------
+
+-- Run a command and place its output in a scratch buffer
+vim.cmd('com! -nargs=+ Run split | wincmd j | enew | setlocal buftype=nofile noswapfile bufhidden=wipe nobuflisted | resize 10 | silent -r! <args>')
+
+----------
+-- Make --
+----------
+
+-- Set makeprg and run make in one go
+vim.cmd('com! -nargs=+ Make let &makeprg = "<args>" | make')
+
+-----------
+-- Maket --
+-----------
+
+-- Set makeprg temporarily, run make, then set it back
+vim.cmd('com! -nargs=+ Maket let oldmakeprg = &makeprg | let &makeprg = "<args>" | make | let &makeprg = oldmakeprg')
+
+-------------
+-- Scratch --
+-------------
+
+-- Make a new scratch buffer in a new tab
+vim.cmd('com! -nargs=0 Scratch tabnew | set buftype=nofile')
+
+-------------
+-- DiffOrig --
+-------------
+
+-- Show diff between current file state and saved file state
+vim.cmd('command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis')
