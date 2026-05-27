@@ -83,3 +83,10 @@ hl.config({
         inactive_timeout         = 10,
     }
 })
+
+-- Laptop overrides
+hl.device({
+    name = "at-translated-set-2-keyboard",
+    kb_variant = "dvorak",
+    resolve_binds_by_sym = true,
+})
