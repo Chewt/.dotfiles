@@ -1,3 +1,3 @@
-require('set')
-require('maps')
-require('lazy_init')
+require('plugins')
+require('commands')
+require('options')

@@ -3,7 +3,7 @@
     "height": 5,
     "reload_style_on_change": true,
     "modules-left": [
-        "hyprland/workspaces",
+        "ext/workspaces",
         "niri/workspaces",
     ],
     "modules-center": [
@@ -18,10 +18,10 @@
         "battery",
         "power-profiles-daemon"
     ],
-    "hyprland/workspaces": {
+    "ext/workspaces": {
         "format": "<span size='small' font='normal Font Awesome 6 Free'>{icon}</span>",
         "on-click": "activate",
-        "sort-by-number": true,
+        "sort-by-name": true,
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
         "format-icons": {
