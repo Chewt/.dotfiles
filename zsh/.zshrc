@@ -2,7 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH=$HOME/.local/bin:$PATH
+# Disable stupid thing where it escapes urls when I paste
+DISABLE_MAGIC_FUNCTIONS=true
 export ZSH="$HOME/.oh-my-zsh"
+
 export LESS="-R -F -X $LESS"
 
 ZSH_THEME="nanotech"
