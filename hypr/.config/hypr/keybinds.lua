@@ -109,3 +109,12 @@ hl.bind("xf86audiostop", hl.dsp.exec_cmd(scriptsDir.."/MediaCtrl.sh --stop"))
 
 -- screenshot with swappy (another screenshot tool)
 hl.bind(mainMod.." + SHIFT + S", hl.dsp.exec_cmd(scriptsDir.."/ScreenShot.sh --swappy")) --screenshot (swappy)
+
+-- Laptop specific keys
+hl.bind("xf86KbdBrightnessDown", hl.dsp.exec_cmd(scriptsDir..'/BrightnessKbd.sh --dec')) -- decrease keyboard brightness
+hl.bind("xf86KbdBrightnessUp", hl.dsp.exec_cmd(scriptsDir..'/BrightnessKbd.sh --inc')) -- increase keyboard brightness
+hl.bind("xf86MonBrightnessDown", hl.dsp.exec_cmd(scriptsDir..'/Brightness.sh --dec')) -- decrease monitor brightness
+hl.bind("xf86MonBrightnessUp", hl.dsp.exec_cmd(scriptsDir..'/Brightness.sh --inc')) -- increase monitor brightness
+hl.bind("SHIFT + xf86MonBrightnessUp", hl.dsp.exec_cmd(scriptsDir..'/Brightness.sh --inc-one')) -- increase monitor brightness
+hl.bind("SHIFT + xf86MonBrightnessDown", hl.dsp.exec_cmd(scriptsDir..'/Brightness.sh --dec-one')) -- decrease monitor brightness
+hl.bind("xf86TouchpadToggle", hl.dsp.exec_cmd(scriptsDir..'/TouchPad.sh')) -- disable touchpad
