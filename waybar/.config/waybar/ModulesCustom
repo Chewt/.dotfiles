@@ -5,6 +5,13 @@
 /* Custom Modules like weather browser, tty, file manager at the beginning */
 
 {
+"custom/pomodoro": {
+    "exec": "$HOME/Scripts/pomodoro.sh --check",
+    "format": "{}",
+    "interval": 1,
+    "on-click": "$HOME/Scripts/rofi-pomodoro.sh",
+},
+
 "custom/weather": {
 	"format": "{}",
 	"format-alt": "{alt}: {}",
