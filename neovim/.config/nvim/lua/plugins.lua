@@ -80,7 +80,7 @@ require('telescope').setup({
 })
 vim.keymap.set('n', '<C-f>', function() require('telescope.builtin').find_files()     end , { noremap = true })
 vim.keymap.set('n', '<C-b>', function() require('telescope.builtin').buffers()        end , { noremap = true })
-vim.keymap.set('n', '<C-g>', function() require('telescope.builtin').default()        end , { noremap = true })
+vim.keymap.set('n', '<C-g>', function() require('telescope.builtin').live_grep()        end , { noremap = true })
 vim.keymap.set('n', 'gr',    function() require('telescope.builtin').lsp_references() end , { noremap = true })
 
 -- Harpoon
