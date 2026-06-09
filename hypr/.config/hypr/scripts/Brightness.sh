@@ -6,6 +6,9 @@ iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
 step=5  # INCREASE/DECREASE BY THIS VALUE
 
+min_brightness=1
+max_brightness=100
+
 # Get brightness
 get_backlight() {
 	brightnessctl -m | cut -d, -f4 | sed 's/%//'
@@ -45,10 +48,10 @@ change_backlight() {
 	fi
 
 	# Ensure new brightness is within valid range
-	if (( new_brightness < 5 )); then
-		new_brightness=5
-	elif (( new_brightness > 100 )); then
-		new_brightness=100
+	if (( new_brightness < min_brightness )); then
+		new_brightness=$min_brightness
+	elif (( new_brightness > max_brightness )); then
+		new_brightness=$max_brightness
 	fi
 
 	brightnessctl set "${new_brightness}%"
