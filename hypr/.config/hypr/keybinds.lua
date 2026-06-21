@@ -39,10 +39,6 @@ hl.bind(mainMod.." + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod.." + k", hl.dsp.focus({ direction = "up"    }))
 hl.bind(mainMod.." + j", hl.dsp.focus({ direction = "down"  }))
 
--- Special workspace
-hl.bind(mainMod.." + SHIFT + U", hl.dsp.window.move({ workspace = "special" }))
-hl.bind(mainMod.." + U", hl.dsp.workspace.toggle_special("special"))
-
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag(), { mouse = true }) -- NOTE: mouse:272 = left click
 hl.bind(mainMod.." + mouse:273", hl.dsp.window.resize(), { mouse = true }) -- NOTE: mouse:272 = right click
@@ -78,6 +74,7 @@ hl.bind(mainMod.." + R", hl.dsp.exec_cmd(scriptsDir.."/Refresh.sh")) -- Refresh 
 hl.bind(mainMod.." + E", hl.dsp.exec_cmd(scriptsDir.."/RofiEmoji.sh")) -- emoji menu
 hl.bind(mainMod.." + S", hl.dsp.exec_cmd(scriptsDir.."/RofiSearch.sh")) -- Google search using rofi
 hl.bind(mainMod.." + V", hl.dsp.exec_cmd(scriptsDir.."/ClipManager.sh")) -- Clipboard Manager
+hl.bind(mainMod.." + SHIFT + V", hl.dsp.exec_cmd("rofi-rbw")) -- Clipboard Manager
 hl.bind(mainMod.." + CTRL + R", hl.dsp.exec_cmd(scriptsDir.."/RofiThemeSelector.sh")) -- KooL Rofi Menu Theme Selector
 
 hl.bind(mainMod.." + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" })) -- whole full screen
