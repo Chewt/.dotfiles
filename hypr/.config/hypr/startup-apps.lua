@@ -9,14 +9,12 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
     -- Polkit (Polkit Gnome / KDE)
-    hl.exec_cmd(scriptsDir.."/Polkit.sh")
+    hl.exec_cmd(scriptsDir.."/Polkit.sh") -- auth popup
 
     -- starup apps
-    hl.exec_cmd("nm-applet --indicator")
-    hl.exec_cmd("swaync")
-    hl.exec_cmd("ags")
-    hl.exec_cmd("blueman-applet")
-    --hl.exec_cmd("rog-control-center")
+    hl.exec_cmd("nm-applet --indicator") -- network manager
+    hl.exec_cmd("swaync")                -- notification daemon
+    hl.exec_cmd("blueman-applet")        -- bluetooth manager
     hl.exec_cmd("waybar")
 
     --clipboard manager
