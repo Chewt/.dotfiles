@@ -21,16 +21,16 @@ local colors = {
 
 hl.config({
     general = {
-        border_size = 2,
-        gaps_in = 1,
-        gaps_out = 2,
+        border_size = 0,
+        gaps_in = 0,
+        gaps_out = 0,
         col = {
             active_border = colors.color10,
             inactive_border = colors.color10,
         }
     },
     decoration = {
-        rounding = 10,
+        rounding = 0,
 
         active_opacity = 1.0,
         inactive_opacity = 1.0,
@@ -69,7 +69,7 @@ hl.config({
         }
     },
     animations = {
-        enabled = true,
+        enabled = false,
     }
 })
 
@@ -90,5 +90,3 @@ hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" }
 hl.animation({ leaf = "fade", enabled = true, speed = 2.5, bezier = "md3_decel" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 3.5, bezier = "easeOutExpo", style = "slide" })
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
-
-
