@@ -1,4 +1,5 @@
 local mainMod = 'ALT'
+local superMod = 'SUPER'
 local term = 'ghostty'
 local scriptsDir = '$HOME/.config/hypr/scripts'
 local UserScripts = '$HOME/.config/hypr/UserScripts'
@@ -7,15 +8,15 @@ local UserScripts = '$HOME/.config/hypr/UserScripts'
 hl.bind(mainMod.." + D", hl.dsp.exec_cmd("pkill rofi || true && rofi -show drun -modi drun,output,filebrowser,run,window")) -- Main Menu (APP Launcher)
 hl.bind(mainMod.." + Return", hl.dsp.exec_cmd(term))
 hl.bind(mainMod.." + APOSTROPHE", hl.dsp.window.close()) -- close active (not kill)
-hl.bind("SUPER + L", hl.dsp.exec_cmd(UserScripts.."/LockScreen.sh")) -- screen lock
+hl.bind(superMod.." + L", hl.dsp.exec_cmd(UserScripts.."/LockScreen.sh")) -- screen lock
 hl.bind(mainMod.." + SHIFT + N", hl.dsp.exec_cmd("swaync-client -t -sw ")) -- swayNC notification panel
 hl.bind(mainMod.." + M", hl.dsp.exec_cmd("hyprctl dispatch splitratio 0.3"))
 hl.bind(mainMod.." + SHIFT + E", hl.dsp.exec_cmd(scriptsDir.."/Kool_Quick_Settings.sh")) -- Settings Menu KooL Hyprland Settings
 hl.bind("CTRL + ALT + P", hl.dsp.exec_cmd(scriptsDir.."/Wlogout.sh")) -- power menu
 
 -- Cycle windows if floating bring to top
-hl.bind("ALT + tab", hl.dsp.window.cycle_next())
-hl.bind("ALT + tab", hl.dsp.window.bring_to_top())
+hl.bind(mainMod.." + tab", hl.dsp.window.cycle_next())
+hl.bind(mainMod.." + tab", hl.dsp.window.bring_to_top())
 hl.bind(mainMod.." + SHIFT + G", hl.dsp.group.toggle()) -- Create a window group
 hl.bind(mainMod.." + SHIFT + tab", hl.dsp.group.next()) -- Switch between windows in group
 
@@ -42,6 +43,30 @@ hl.bind(mainMod.." + j", hl.dsp.focus({ direction = "down"  }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag(), { mouse = true }) -- NOTE: mouse:272 = left click
 hl.bind(mainMod.." + mouse:273", hl.dsp.window.resize(), { mouse = true }) -- NOTE: mouse:272 = right click
+
+-- Resize the active window with keybinds
+local resize_step = 10
+hl.bind(
+    superMod.." + h",
+    hl.dsp.window.resize({ x = -resize_step, y =  0, relative = true }),
+    { repeating = true }
+) -- Resize left  5 px
+hl.bind(
+    superMod.." + l",
+    hl.dsp.window.resize({ x =  resize_step, y =  0, relative = true }),
+    { repeating = true }
+) -- Resize right 5 px
+hl.bind(
+    superMod.." + k",
+    hl.dsp.window.resize({ x =  0, y = -resize_step, relative = true }),
+    { repeating = true }
+) -- Resize up    5 px
+hl.bind(
+    superMod.." + j",
+    hl.dsp.window.resize({ x =  0, y =  resize_step, relative = true }),
+    { repeating = true }
+) -- Resize down  5 px
+
 
 -- The following mappings use the key codes to better support various keyboard layouts
 -- 1 is code:10, 2 is code 11, etc
