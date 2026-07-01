@@ -89,9 +89,33 @@ vim.cmd('com! -nargs=+ Maket let oldmakeprg = &makeprg | let &makeprg = "<args>"
 -- Make a new scratch buffer in a new tab
 vim.cmd('com! -nargs=0 Scratch tabnew | set buftype=nofile')
 
--------------
+--------------
 -- DiffOrig --
--------------
+--------------
 
 -- Show diff between current file state and saved file state
 vim.cmd('command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis')
+
+-----------
+-- Lgrep --
+-----------
+
+-- Grep local to the directory of the current buffer
+vim.api.nvim_create_user_command(
+    'LGrep',
+    function(opts)
+        -- Get cwd of buffer
+        local cwd = vim.fn.expand('%:h')
+        if (vim.startswith(cwd, 'oil://')) then
+            cwd = require('oil').get_current_dir()
+        end
+        local args = ''
+        for _, item in ipairs(opts.fargs) do
+            args = args..item..' '
+        end
+        vim.cmd('lcd '..cwd)
+        vim.cmd('grep! '..args)
+        vim.cmd('lcd -')
+    end,
+    { nargs   = '+' }
+)
