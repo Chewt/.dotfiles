@@ -87,6 +87,7 @@ hl.window_rule({float = true, match = { class = "(org.gnome.Calculator), match:t
 hl.window_rule({float = true, match = { class = "^(mpv|com.github.rafostar.Clapper)$"}})
 hl.window_rule({float = true, match = { class = "^([Qq]alculate-gtk)$"}})
 hl.window_rule({float = true, match = { class = "^([Ff]erdium)$"}})
+hl.window_rule({float = true, match = { class = "^floating$"}})
 hl.window_rule({float = true, match = { title = "^(Picture-in-Picture)$"}})
 hl.window_rule({float = true, match = { class = "^(org.remmina.Remmina)$"}})
 hl.window_rule({float = true, match = { tag = "browser*", title = "^(*Extension*)$"}})
