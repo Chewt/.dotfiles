@@ -6,6 +6,7 @@ hypr/.config/hypr/workspaces.lua
 hypr/.config/hypr/monitors.lua
 
 neovim/.config/nvim/lazy-lock.json
+neovim/.config/nvim/nvim-pack-lock.json
 neovim/.config/nvim/plugged/
 
 vim/.vim/.netrwhist
