@@ -47,7 +47,9 @@ vim.lsp.enable('zls')
 vim.pack.add({
     "https://github.com/romus204/tree-sitter-manager.nvim",
 })
-require('tree-sitter-manager').setup()
+require('tree-sitter-manager').setup({
+    ensure_installed = {'c', 'comments'} -- For TODO highlighting
+})
 
 ---------------
 -- Utilities --
