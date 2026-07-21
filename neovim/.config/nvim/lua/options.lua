@@ -19,6 +19,9 @@ vim.opt.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Allow project local config files
+vim.o.exrc = true
+
 vim.g.maplocalleader = ';'
 
 -- Disable providers
