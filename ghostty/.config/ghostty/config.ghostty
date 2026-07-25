@@ -3,7 +3,10 @@ gtk-titlebar = false
 gtk-single-instance = true
 resize-overlay = never
 shell-integration = zsh
+shell-integration-features = no-cursor
 window-inherit-working-directory = false
+cursor-style-blink = false
+cursor-style = block
 
 config-file = device-specific
 
