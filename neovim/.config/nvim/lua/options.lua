@@ -19,10 +19,11 @@ vim.opt.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Disable line cursor
+vim.o.guicursor = ''
+
 -- Allow project local config files
 vim.o.exrc = true
-
-vim.g.maplocalleader = ';'
 
 -- Disable providers
 vim.g.loaded_ruby_provider    = 0
@@ -37,6 +38,7 @@ vim.g.c_syntax_for_h = 1
 vim.cmd('colorscheme terafox')
 
 -- Custom Mappings
+vim.g.maplocalleader = ';'
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>e', ':Oil<CR>', { noremap = true })
 vim.keymap.set('i', '<c-c>', '<ESC>',        { noremap = true })
