@@ -91,6 +91,7 @@ hl.window_rule({float = true, match = { class = "^floating$"}})
 hl.window_rule({float = true, match = { title = "^(Picture-in-Picture)$"}})
 hl.window_rule({float = true, match = { class = "^(org.remmina.Remmina)$"}})
 hl.window_rule({float = true, match = { tag = "browser*", title = "^(*Extension*)$"}})
+hl.window_rule({float = true, match = { title = "^gf2$"}})
 
 -- POSITION
 hl.window_rule({move = "onscreen 100%-monitor_w-20 100%-monitor_w-20", match = { tag = "file-manager*" }})
