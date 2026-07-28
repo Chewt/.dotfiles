@@ -61,13 +61,6 @@ vim.api.nvim_create_user_command(
     }
 )
 
----------
--- Run --
----------
-
--- Run a command and place its output in a scratch buffer
-vim.cmd('com! -nargs=+ Run split | wincmd j | enew | setlocal buftype=nofile noswapfile bufhidden=wipe nobuflisted | resize 10 | silent -r! <args>')
-
 ----------
 -- Make --
 ----------
