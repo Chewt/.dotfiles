@@ -35,7 +35,7 @@ vim.g.loaded_python3_provider = 0
 vim.g.c_syntax_for_h = 1
 
 -- Color Scheme
-vim.cmd('colorscheme terafox')
+vim.cmd('colorscheme default')
 
 -- Custom Mappings
 vim.g.maplocalleader = ';'
