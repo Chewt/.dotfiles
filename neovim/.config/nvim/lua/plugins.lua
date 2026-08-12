@@ -29,18 +29,6 @@ require('mason-lspconfig').setup({
 vim.keymap.set('n', '<c-w>d', vim.diagnostic.open_float, { noremap = true })
 vim.diagnostic.config { virtual_text = false }
 
---- LSP servers not installed via Mason
-
--- Zig support
-vim.lsp.config('zls', {
-    settings = {
-        zls = {
-            semantic_tokens = 'partial',
-        }
-    }
-})
-vim.lsp.enable('zls')
-
 -----------------
 -- Tree Sitter --
 -----------------
