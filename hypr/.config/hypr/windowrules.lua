@@ -103,8 +103,6 @@ hl.window_rule({center = true, match = { class = "^(pavucontrol|org.pulseaudio.p
 hl.window_rule({center = true, match = { class = "^([Ww]hatsapp-for-linux|ZapZap|com.rtosta.zapzap)$" }})
 hl.window_rule({center = true, match = { class = "^([Ff]erdium)$" }})
 hl.window_rule({move = "72% 7%", match = { title = "^(Picture-in-Picture)$" }})
-hl.window_rule({size = "(monitor_w*0.2) (monitor_h*0.2)", match = { class = "^([Qq]alculate-gtk)$" }})
-hl.window_rule({move = "(monitor_w-(window_w*1.4)) (window_h*0.75)", match = { class = "^([Qq]alculate-gtk)$" }})
 
 -- Avoid idle if window is fullscreen
 hl.window_rule({ idle_inhibit = "fullscreen", match = { fullscreen = true }})

@@ -41,8 +41,7 @@ hl.config({
             enabled = false,
         },
         tablet = {
-            transform   = 0,
-            left_handed = 0,
+            output = "current",
         },
     },
     gestures = {
