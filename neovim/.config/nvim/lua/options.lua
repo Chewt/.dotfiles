@@ -6,7 +6,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.so = 5
-vim.opt_local.tw = 80
+vim.opt.tw = 80
 
 vim.opt.foldenable = false
 vim.opt.hlsearch = false
@@ -35,7 +35,7 @@ vim.g.loaded_python3_provider = 0
 vim.g.c_syntax_for_h = 1
 
 -- Color Scheme
-vim.cmd('colorscheme default')
+vim.cmd('colorscheme silentium')
 
 -- Custom Mappings
 vim.g.maplocalleader = ';'

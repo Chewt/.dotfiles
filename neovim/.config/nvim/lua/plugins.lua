@@ -9,8 +9,8 @@ vim.pack.add({
      'https://github.com/EdenEast/nightfox.nvim',
      { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
      { src = 'https://github.com/rose-pine/neovim', name = 'rose-pine' },
+     'https://github.com/silentium-theme/silentium.nvim' -- Can be customized, see repo
 })
-
 
 ---------
 -- LSP --
