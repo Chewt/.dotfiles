@@ -25,7 +25,7 @@ hl.config({
 
         sensitivity                 = 0, -- mouse sensitivity
         numlock_by_default          = true,
-        follow_mouse                = 1,
+        follow_mouse                = true,
         float_switch_override_focus = false,
 
         touchpad = {

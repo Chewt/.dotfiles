@@ -106,8 +106,9 @@ hl.bind(mainMod.." + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" })
 hl.bind(mainMod.." + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" })) --Float Mode
 
 -- Waybar / Bar related
-hl.bind(mainMod.." + CTRL + B", hl.dsp.exec_cmd(scriptsDir.."/WaybarStyles.sh")) -- Waybar Styles Menu
-hl.bind(mainMod.." + SHIFT + B", hl.dsp.exec_cmd(scriptsDir.."/WaybarLayout.sh")) -- Waybar Layout Menu
+hl.bind(mainMod.." + CTRL + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar")) -- Toggle waybar visibility
+-- hl.bind(mainMod.." + CTRL + B", hl.dsp.exec_cmd(scriptsDir.."/WaybarStyles.sh")) -- Waybar Styles Menu
+-- hl.bind(mainMod.." + SHIFT + B", hl.dsp.exec_cmd(scriptsDir.."/WaybarLayout.sh")) -- Waybar Layout Menu
 
 -- FEATURES / EXTRAS (UserScripts)
 hl.bind(mainMod.." + W", hl.dsp.exec_cmd(UserScripts.."/WallpaperSelect.sh")) -- Select wallpaper to apply
