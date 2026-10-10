@@ -1,6 +1,6 @@
 local mainMod = 'ALT'
 local superMod = 'SUPER'
-local term = 'ghostty'
+local term = 'foot'
 local scriptsDir = '$HOME/.config/hypr/scripts'
 local UserScripts = '$HOME/.config/hypr/UserScripts'
 
