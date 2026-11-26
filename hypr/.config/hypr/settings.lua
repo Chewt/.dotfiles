@@ -2,7 +2,6 @@ hl.config({
     -- Dwindle Layout
     dwindle = {
         preserve_split       = true,
-        special_scale_factor = 0.8,
     },
     -- Master Config
     master = {
