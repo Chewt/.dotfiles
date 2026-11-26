@@ -6,7 +6,7 @@ local template_file = notes_location..'2-Resources/Templates/Daily Journal.md'
 
 -- Go to today's note, creating it if it doesn't exist and respecting the template file
 local function today()
-    local today_filename = os.date('%Y-%m-%d')..'.md'
+    local today_filename = os.date('%Y-%m')..'.md'
     local real_path = vim.fs.abspath(journal_dir..'/'..today_filename)
     local result, _, _ = vim.uv.fs_stat(real_path)
     if result ~= nil then
@@ -26,6 +26,8 @@ local function add_days(date, days)
 end
 
 -- Jump to the next nth day, can be negative to jump backwards
+-- TODO(hayden): I probably don't need this function anymore, since I am moving
+-- to one file per month for my notes.
 local function next_or_prev_day(n)
     local current_date
     local current_buffer = vim.api.nvim_buf_get_name(0)
